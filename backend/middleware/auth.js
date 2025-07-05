@@ -1,9 +1,8 @@
 const jwt = require('jsonwebtoken');
 
 const verifyToken = (req, res, next) => {
-  const authHeader = req.headers.authorization;
+  const authHeader = req.headers.authorization || req.headers.Authorization;
 
-  // Check if token exists and starts with Bearer
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
     return res.status(401).json({ error: 'No token provided' });
   }
@@ -11,15 +10,17 @@ const verifyToken = (req, res, next) => {
   const token = authHeader.split(' ')[1];
 
   try {
-    // Verify token using secret
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-    // Attach user ID to request object
+    if (!decoded.userId) {
+      return res.status(401).json({ error: 'Invalid token payload' });
+    }
+
     req.user = { id: decoded.userId };
     next();
   } catch (err) {
     console.error('Invalid token:', err.message);
-    res.status(401).json({ error: 'Invalid token' });
+    return res.status(401).json({ error: 'Invalid token' });
   }
 };
 
