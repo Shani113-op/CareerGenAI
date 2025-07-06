@@ -1,21 +1,21 @@
+// src/components/PremiumPopup.jsx
 import React, { useState } from "react";
 import { FaCrown } from "react-icons/fa";
 import "../styles/CareerDetail.css";
 
-export default function PremiumPopup({ onClose, onUpgrade }) {
+export default function PremiumPopup({ onClose = () => {}, onUpgrade }) {
   const [selectedPlan, setSelectedPlan] = useState(null);
   const [showUpgradeConfirmation, setShowUpgradeConfirmation] = useState(false);
 
-  // ✅ Upgrade handler
   const handleUpgrade = () => {
     const currentUser = JSON.parse(localStorage.getItem("user")) || {};
     currentUser.isPremium = true;
     localStorage.setItem("user", JSON.stringify(currentUser));
 
     alert("✅ Payment successful! You now have premium access.");
-    onClose(); // close popup
-    onUpgrade?.(); // callback to update UI (optional)
-    window.location.reload(); // refresh all pages using localStorage
+    onClose(); // Close modal safely
+    onUpgrade?.(); // Optional callback to refresh parent state/UI
+    window.location.reload(); // Force UI reload if needed
   };
 
   return (
@@ -33,7 +33,7 @@ export default function PremiumPopup({ onClose, onUpgrade }) {
               </p>
             </div>
 
-            {/* Subscription Plan Options */}
+            {/* Subscription Plans */}
             <div className="plan-cards">
               {["1 Month", "3 Months", "1 Year"].map((plan) => (
                 <div

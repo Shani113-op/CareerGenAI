@@ -614,3 +614,142 @@
     min-width: 250px;
   }
 }
+
+/* ===== Responsive Styles ===== */
+@media screen and (max-width: 1024px) {
+  .career-page {
+    padding: 30px 15px;
+  }
+
+  .career-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    padding: 10px;
+  }
+
+  .career-card.premium {
+    padding: 20px;
+  }
+
+  .career-card.premium h3 {
+    font-size: 1.1rem;
+  }
+
+  .career-card.premium .desc {
+    font-size: 0.9rem;
+  }
+
+  .see-more-btn {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .header p {
+    font-size: 0.95rem;
+  }
+
+  .controls {
+    gap: 12px;
+  }
+
+  .category-scroll-wrapper {
+    overflow-x: auto;
+    margin: 0 -10px;
+    padding: 0 10px;
+  }
+
+  .category-scroll {
+    justify-content: flex-start;
+    gap: 8px;
+    padding-bottom: 8px;
+  }
+
+  .category-btn {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+
+  .search-wrapper input {
+    font-size: 0.95rem;
+  }
+
+  .career-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .career-card.premium {
+    padding: 16px;
+  }
+
+  .career-image {
+    height: 140px;
+  }
+
+  .modal-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .modal-desc {
+    font-size: 0.95rem;
+  }
+
+  .modal-section strong {
+    font-size: 0.95rem;
+  }
+
+  .modal-section ul li {
+    font-size: 0.9rem;
+  }
+
+  .salary-pill,
+  .download-btn {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .modal-content {
+    padding: 14px;
+  }
+
+  .close-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+  }
+
+  .plan-card {
+    padding: 12px;
+  }
+
+  .plan-card h3 {
+    font-size: 1rem;
+  }
+
+  .plan-card p {
+    font-size: 16px;
+  }
+
+  .subcategory-card {
+    min-width: 220px;
+    padding: 12px;
+  }
+
+  .subcategory-card h4 {
+    font-size: 1rem;
+  }
+
+  .subcategory-desc {
+    font-size: 0.9rem;
+  }
+
+  .download-btn {
+    width: 100%;
+    padding: 10px;
+  }
+}

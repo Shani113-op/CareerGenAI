@@ -17,6 +17,10 @@ import VerifyOtp from './pages/VerifyOtp';
 import PremiumPlans from './components/PremiumPlans';
 import CollegesByLocation from './pages/CollegesByLocation';
 import Profile from './pages/Profile';
+import Services from './pages/ServicesPage';
+import CareerCompare from './pages/CareerCompare';
+import ResumeBuilder from './pages/ResumeBuilder';
+
 
 import PrivateRoute from './routes/PrivateRoute';
 
@@ -37,11 +41,14 @@ const Layout = () => {
           <Route path="/careerDetail" element={<PrivateRoute><CareerDetail /></PrivateRoute>} />
           <Route path="/consult" element={<PrivateRoute><Consult /></PrivateRoute>} />
           <Route path="/college" element={<PrivateRoute><CollegesByLocation /></PrivateRoute>} />
+          <Route path="/services" element={<PrivateRoute><Services /></PrivateRoute>} />
+          <Route path="/compare" element={<PrivateRoute><CareerCompare /></PrivateRoute>} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/verify-otp" element={<VerifyOtp />} />
           <Route path="/pricing" element={<PremiumPlans />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/resume-builder" element={<ResumeBuilder />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </main>

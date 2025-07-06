@@ -2,7 +2,7 @@
 
 .navbar {
   background-color: #1f2937;
-  color: rgb(255, 255, 255);
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -68,7 +68,6 @@
 .auth-button.register {
   background-color: #3b82f6;
 }
-
 .auth-button.register:hover {
   background-color: #2563eb;
 }
@@ -76,7 +75,6 @@
 .auth-button.logout {
   background-color: #ef4444;
 }
-
 .auth-button.logout:hover {
   background-color: #dc2626;
 }
@@ -102,7 +100,7 @@
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   min-width: 150px;
   padding: 0.5rem 0;
@@ -120,7 +118,6 @@
   cursor: pointer;
   transition: background 0.2s ease;
 }
-
 .dropdown-menu button:hover {
   background-color: #f5f5f5;
 }
@@ -128,22 +125,97 @@
 /* Highlight current nav item */
 .navbar-links a.active {
   font-weight: bold;
-  color: #007bff;
-  border-bottom: 2px solid #007bff;
+  color: #10b981;
+  border-bottom: 2px solid #10b981;
   padding-bottom: 4px;
 }
 
-/* Optional enhancements */
-.navbar-links li {
-  margin: 0 10px;
+/* Responsive styles */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
 }
 
-.navbar-links a {
-  text-decoration: none;
-  color: #333;
-  transition: color 0.3s ease;
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 20px;
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .navbar-links.show {
+    display: flex;
+  }
+
+  .navbar-auth {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .auth-button {
+    width: 100%;
+    text-align: center;
+  }
 }
 
-.navbar-links a:hover {
-  color: #007bff;
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 12px 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .navbar-links.show {
+    display: flex;
+  }
+
+  .navbar-auth {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+    display: none;
+  }
+
+  .navbar-auth.show {
+    display: flex;
+  }
+
+  .auth-button {
+    width: 100%;
+    text-align: center;
+  }
 }
